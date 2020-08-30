@@ -1,0 +1,6 @@
+[package]
+name = "act-log-parser"
+version = "0.1.0"
+authors = ["KJ <xiankai@gmail.com>"]
+
+[dependencies]

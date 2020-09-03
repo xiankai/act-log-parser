@@ -104,6 +104,10 @@ fn parse_file(filename: &str) {
         writeln!(&mut chat_lines, "{}|{}|{}|{}", timestamp, channel.unwrap(), sender, message).unwrap();
     }
 
+    if chat_lines.len() <= 0 {
+        return;
+    }
+
     let mut f2 = File::create("output/".to_owned() + &filename.to_owned()).expect("file already exists");
     f2.write(&unknown_identifiers.into_iter().collect::<Vec<&str>>().join("\n").into_bytes()).unwrap();
     f2.write(&chat_lines).unwrap();
